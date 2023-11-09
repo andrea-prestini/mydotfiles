@@ -3,7 +3,7 @@ fcd () {
   local dir
   dir=$(find ${1:-.} -type d -not -path '*/\.*' 2> /dev/null | fzf +m) && cd "$dir"}
 
-ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
+# ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 
 # compinit conda
 ###
@@ -85,7 +85,8 @@ ZSH_THEME="fino" # set by `omz`
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z jump fasd zsh-vi-mode)
+# plugins=(git z jump fasd zsh-vi-mode)
+plugins=(git z jump fasd)
 
 if [ -f $ZSH/oh-my-zsh.sh ]; then
   source $ZSH/oh-my-zsh.sh
