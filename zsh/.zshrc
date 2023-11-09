@@ -151,7 +151,8 @@ alias pip='function _pip(){
   fi;
 };_pip'
 alias manuale="cht.sh "
-alias c="clean"
+# alias c="clean"
+alias c="clear"
 alias testo="tldr"
 alias cl="clear && neofetch"
 alias sk="skullpuke"
@@ -371,7 +372,7 @@ alias listaur="sudo pacman -Qqem"
 # pacman -S --needed - < my-list-of-packages.txt
 
 #clear
-alias clean="clear; seq 1 $(tput cols) | sort -R | sparklines | lolcat"
+# alias clean="clear; seq 1 $(tput cols) | sort -R | sparklines | lolcat"
 
 #search content with ripgrep
 alias rg="rg --sort path"
