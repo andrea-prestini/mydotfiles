@@ -4,7 +4,13 @@ fcd () {
   dir=$(find ${1:-.} -type d -not -path '*/\.*' 2> /dev/null | fzf +m) && cd "$dir"}
 
 # ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
-
+autoload -Uz compinit && compinit
+### ---- Completion options and styling -----------------------------------
+zstyle ':completion:*' menu select # selectable menu
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]-_}={[:upper:][:lower:]_-}' 'r:|=*' 'l:|=* r:|=*'  # case insensitive completion
+zstyle ':completion:*' special-dirs true # Complete . and .. special directories
+zstyle ':completion:*' list-colors '' # colorize completion lists
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01' # colorize kill list
 # compinit conda
 ###
 # If you come from bash you might have to change your $PATH.
@@ -86,7 +92,9 @@ ZSH_THEME="adben" # set by `omz`
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git z jump fasd zsh-vi-mode)
-plugins=(git z jump fasd)
+# plugins=(git z jump fasd)
+plugins=(git z jump fasd zsh-autosuggestions)
+
 
 if [ -f $ZSH/oh-my-zsh.sh ]; then
   source $ZSH/oh-my-zsh.sh
@@ -578,4 +586,5 @@ Tree(){
   tree -L $1
 }
 
+### ---- load Starship ---------------------------------------------------
 eval "$(starship init zsh)"
