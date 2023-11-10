@@ -577,3 +577,5 @@ lf () {
 Tree(){
   tree -L $1
 }
+
+eval "$(starship init zsh)"
