@@ -94,6 +94,7 @@ ZSH_THEME="adben" # set by `omz`
 # plugins=(git z jump fasd zsh-vi-mode)
 # plugins=(git z jump fasd)
 plugins=(git z jump fasd zsh-autosuggestions)
+bindkey '^o' autosuggest-accept
 
 
 if [ -f $ZSH/oh-my-zsh.sh ]; then
