@@ -153,6 +153,8 @@ fi
 
 ### ALIASES ###
 # Andrea
+alias nv="nvim"
+alias open="thunar"
 alias pip='function _pip(){
   if [ $1 = "search" ]; then
       pip_search "$2";
@@ -160,6 +162,7 @@ alias pip='function _pip(){
   fi;
 };_pip'
 alias manuale="cht.sh "
+alias lg="lazygit"
 # alias c="clean"
 alias c="clear"
 alias testo="tldr"
