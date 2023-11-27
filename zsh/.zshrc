@@ -155,6 +155,7 @@ fi
 ### ALIASES ###
 # Andrea
 alias nv="nvim"
+alias rmf="rm -rf"
 alias open="thunar"
 alias pip='function _pip(){
   if [ $1 = "search" ]; then
@@ -182,6 +183,7 @@ alias ls='exa -1 --icons'
 alias l='exa -a -lbF --icons --git'
 alias lt1='exa --tree --level=1'
 alias lt2='exa --tree --level=2'
+alias lt3='exa --tree --level=3'
 alias ll='exa -lbGF --icons'
 alias llt='exa -l --git --tree'
 alias llm='exa -lbGF --git --sort=modified'
