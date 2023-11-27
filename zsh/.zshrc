@@ -94,7 +94,8 @@ ZSH_THEME="adben" # set by `omz`
 # plugins=(git z jump fasd zsh-vi-mode)
 # plugins=(git z jump fasd)
 plugins=(git z jump fasd zsh-autosuggestions)
-# bindkey '^-o' autosuggest-accept
+bindkey '^o' autosuggest-accept
+
 
 
 if [ -f $ZSH/oh-my-zsh.sh ]; then
@@ -179,10 +180,10 @@ alias la='exa -a --icons --color-scale'
 alias li='exa --long --header --inode --git --icons'
 alias ls='exa -1 --icons'
 alias l='exa -a -lbF --icons --git'
-alias lt='exa --tree --level=1'
+alias lt1='exa --tree --level=1'
+alias lt2='exa --tree --level=2'
 alias ll='exa -lbGF --icons'
 alias llt='exa -l --git --tree'
-alias lt='exa --tree --level=1'
 alias llm='exa -lbGF --git --sort=modified'
 alias lld='exa -lbhHFGmuSa --group-directories-first'
 alias lx='exa -lbhHigmuSa@ --time-style=long-iso --git --color-scale'
@@ -529,7 +530,7 @@ alias awa="arcolinux-welcome-app"
 
 #git
 alias rmgitcache="rm -r ~/.cache/git"
-alias grh="git reset --hard"
+# alias grh="git reset --hard"
 
 #pamac
 alias pamac-unlock="sudo rm /var/tmp/pamac/dbs/db.lock"
