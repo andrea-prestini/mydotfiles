@@ -1,3 +1,4 @@
+source ./.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fpath+=/home/andrea/conda-zsh-completion/
 fcd () {
   local dir
@@ -92,8 +93,8 @@ ZSH_THEME="adben" # set by `omz`
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git z jump fasd zsh-vi-mode)
-# plugins=(git z jump fasd)
-plugins=(git z jump fasd zsh-autosuggestions)
+plugins=(git z jump fasd)
+# plugins=(git z jump fasd zsh-autosuggestions)
 bindkey '^o' autosuggest-accept
 
 
