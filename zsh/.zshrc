@@ -1,8 +1,9 @@
 fpath+=/home/andrea/conda-zsh-completion/
+
 fcd () {
   local dir
   dir=$(find ${1:-.} -type d -not -path '*/\.*' 2> /dev/null | fzf +m) && cd "$dir"}
-
+  
 # ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 autoload -Uz compinit && compinit
 ### ---- Completion options and styling -----------------------------------
@@ -54,7 +55,7 @@ ZSH_THEME="adben" # set by `omz`
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -94,9 +95,10 @@ ZSH_THEME="adben" # set by `omz`
 # plugins=(git z jump fasd zsh-vi-mode)
 # plugins=(git z jump fasd)
 plugins=(git z jump fasd zsh-autosuggestions)
-bindkey '^o' autosuggest-accept
-
-
+# plugins=(git z jump fasd )
+# bindkey '^o' autosuggest-accept
+bindkey '\e' autosuggest-accept
+# bindkey '$' autosuggest-accept
 
 if [ -f $ZSH/oh-my-zsh.sh ]; then
   source $ZSH/oh-my-zsh.sh
@@ -137,7 +139,7 @@ unsetopt SHARE_HISTORY
 
 export HISTCONTROL=ignoreboth:erasedups
 
-# Make nano the default editor
+# Make nvim the default editor
 
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -543,7 +545,7 @@ alias personal='cp -Rf /personal/* ~'
 #create a file called .zshrc-personal and put all your personal aliases
 #in there. They will not be overwritten by skel.
 
-[[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
+# [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
 # reporting tools - install when not installed
 #neofetch
