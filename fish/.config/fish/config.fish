@@ -58,8 +58,8 @@ set -U fish_user_paths $HOME/.bin $HOME/.local/bin $HOME/Applications $fish_user
 #end
 
 # sets tools
-set -x EDITOR nano
-set -x VISUAL nano
+set -x EDITOR subl
+set -x VISUAL subl
 #set -x TERM alacritty
 # Sets the terminal type for proper colors
 set TERM "xterm-256color"
@@ -200,23 +200,28 @@ alias nv="nvim"
 alias rmf="rm -rf"
 alias open="thunar"
 alias manuale="tldr"
+
+if type -q exa
+    alias ls="exa"
+    alias xls="exa -a --icons --color=always --group-directories-first"
+    alias xll="exa -lag --icons --color=always --group-directories-first --octal-permissions"
+    alias l='exa -1 --icons --git'
+    alias la='exa -al --icons'
+    alias lv='exa -1 --icons'
+    alias li='exa --long --header --inode --git --icons'
+    alias lla='exa -lbhHigmuSa --icons --time-style=long-iso --git --color-scale'
+    alias lt1='exa --tree --level=1 --icons -a'
+    alias lt2='exa --tree --level=2 --icons -a'
+    alias lt3='exa --tree --level=3 --icons -a'
+    alias ll='exa -lbGF --icons'
+    alias llt='exa -l --git --tree --icons'
+    alias llm='exa -lbGF --git --sort=modified'
+    alias lld='exa -lbhHFGmuSa --group-directories-first'
+    alias lx='exa -lbhHigmuSa --time-style=long-iso --git --color-scale'
+    alias lr="exa -R"
+    alias l.="exa -a | grep -E '^\.'"
+end
 alias lg="lazygit"
-alias lla='exa -lbhHigmuSa --icons --time-style=long-iso --git --color-scale'
-alias la='exa -al --icons'
-alias lv='exa -1 --icons'
-alias li='exa --long --header --inode --git --icons'
-# alias l='exa -a -lbF --icons --git'
-alias l='exa -1 --icons --git'
-alias lt1='exa --tree --level=1 --icons -a'
-alias lt2='exa --tree --level=2 --icons -a'
-alias lt3='exa --tree --level=3 --icons -a'
-alias ll='exa -lbGF --icons'
-alias llt='exa -l --git --tree --icons'
-alias llm='exa -lbGF --git --sort=modified'
-alias lld='exa -lbhHFGmuSa --group-directories-first'
-alias lx='exa -lbhHigmuSa --time-style=long-iso --git --color-scale'
-alias lr="exa -R"
-alias l.="exa -a | grep -E '^\.'"
 alias listdir="ls -d */ > list"
 
 
@@ -236,11 +241,6 @@ end
 
 alias depends='function_depends'
 
-if type -q exa
-    alias ls="exa"
-    alias xls="exa -a --icons --color=always --group-directories-first"
-    alias xll="exa -lag --icons --color=always --group-directories-first --octal-permissions"
-end
 
 #fix obvious typo's
 alias cd..="cd .."
