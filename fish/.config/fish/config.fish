@@ -210,6 +210,7 @@ if type -q exa
     alias lv='exa -1 --icons'
     alias li='exa --long --header --inode --git --icons'
     alias lla='exa -lbhHigmuSa --icons --time-style=long-iso --git --color-scale'
+    alias lt='exa --tree --icons -a'
     alias lt1='exa --tree --level=1 --icons -a'
     alias lt2='exa --tree --level=2 --icons -a'
     alias lt3='exa --tree --level=3 --icons -a'
