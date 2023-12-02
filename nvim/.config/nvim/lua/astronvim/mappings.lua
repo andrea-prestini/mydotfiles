@@ -335,7 +335,7 @@ if is_available "telescope.nvim" then
         additional_args = function(args) return vim.list_extend(args, { "--hidden", "--no-ignore" }) end,
       }
     end,
-    desc = "Find words in all files",
+    desc = "Find words hidden ignore files",
   }
   maps.n["<leader>l"] = sections.l
   maps.n["<leader>ls"] = {
