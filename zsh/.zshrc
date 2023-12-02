@@ -595,5 +595,5 @@ Tree(){
   tree -L $1
 }
 
-### ---- load Starship ---------------------------------------------------
+### ---- load Starship stay on the bottom of this file---------------------------------------------------
 eval "$(starship init zsh)"
