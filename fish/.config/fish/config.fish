@@ -1,7 +1,3 @@
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-eval /home/andrea/anaconda3/bin/conda "shell.fish" "hook" $argv | source
-# <<< conda initialize <<<
 bind \co accept-autosuggestion
 ###
 # https://fishshell.com/docs/current/index.html
