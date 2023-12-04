@@ -87,9 +87,9 @@ if type -q bat
     alias cat="bat --paging=never"
 end
 
-if command -sq fzf && type -q fzf_configure_bindings
-  fzf_configure_bindings --directory=\ct
-end
+# if command -sq fzf && type -q fzf_configure_bindings
+#   fzf_configure_bindings --directory=\ct
+# end
 
 if not set -q -g fish_user_abbreviations
   set -gx fish_user_abbreviations
