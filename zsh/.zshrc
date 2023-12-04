@@ -158,6 +158,7 @@ fi
 alias nv="nvim"
 alias rmf="rm -rf"
 alias open="thunar"
+alias lzd="lazydocker"
 alias pip='function _pip(){
   if [ $1 = "search" ]; then
       pip_search "$2";
