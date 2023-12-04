@@ -197,6 +197,7 @@ alias rmf="rm -rf"
 alias open="thunar"
 alias manuale="tldr"
 alias lzd="lazydocker"
+alias ff="fzf --print0 | xargs -0 -o nvim"
 
 if type -q exa
     alias ls="exa"
