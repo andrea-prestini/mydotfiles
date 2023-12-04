@@ -196,6 +196,7 @@ alias nv="nvim"
 alias rmf="rm -rf"
 alias open="thunar"
 alias manuale="tldr"
+alias lzd="lazydocker"
 
 if type -q exa
     alias ls="exa"
