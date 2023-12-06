@@ -1,9 +1,15 @@
 import time
 
-lista = [1, 2, 3, 4, 5]
+lista = [1, 2]
 
-for val in lista:
-    print("ciao amico %s" % val)
-    time.sleep(2)
+xname = "andrea"
 
-print("fine procedura")
+
+if input("Come ti chiami? ") == xname:
+    print("Ciao {}".format(xname))
+    time.sleep(1)
+    print("Benvenuto nel nostro maniero!")
+else:
+    print("Mi dispiace ma non sei {}".format(xname))
+    time.sleep(1)
+    print("Arrivederci")
