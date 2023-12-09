@@ -6,6 +6,5 @@
 ## Usage
 
 Clone repo and use stow to install it!
-Have fun!
-![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*QeZ3O-E-cmARACu-PY3b6w.jpeg)
+
 ![](https://members-csforall.imgix.net/members/logos/cff-original-logo-bao-whitebg.jpg)
