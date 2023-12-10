@@ -198,6 +198,7 @@ alias open="thunar"
 alias manuale="tldr"
 alias lzd="lazydocker"
 alias ff="fzf --print0 | xargs -0 -o nvim"
+alias notebook="jupyter-notebook"
 
 if type -q exa
     alias ls="exa"
