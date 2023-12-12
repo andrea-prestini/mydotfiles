@@ -196,7 +196,8 @@ alias nv="nvim"
 alias rmf="rm -rf"
 alias open="thunar"
 alias manuale="tldr"
-alias lzd="lazydocker"
+alias ldd="lazydocker"
+alias lgg="lazygit"
 alias ff="fzf --print0 | xargs -0 -o nvim"
 alias notebook="jupyter-notebook"
 
@@ -221,7 +222,6 @@ if type -q exa
     alias lr="exa -R"
     alias l.="exa -a | grep -E '^\.'"
 end
-alias lg="lazygit"
 alias listdir="ls -d */ > list"
 
 
