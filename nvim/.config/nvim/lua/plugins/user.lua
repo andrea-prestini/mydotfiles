@@ -10,6 +10,10 @@ return { {
     "olimorris/onedarkpro.nvim",
     lazy = false
   },
+  {
+    "tveskag/nvim-blame-line",
+    lazy = false
+  },
 
   {
     "folke/tokyonight.nvim",
