@@ -7,7 +7,24 @@ return { {
     end
   },
   {
+    "olimorris/onedarkpro.nvim",
+    lazy = false
+  },
+
+  {
     "folke/tokyonight.nvim",
+    lazy = false
+  },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy =false
+  },
+  {
+    "ellisonleao/gruvbox.nvim",
+    lazy = false
+  },
+  {
+    "tanvirtin/monokai.nvim",
     lazy = false
   },
   {
