@@ -200,6 +200,7 @@ alias ldd="lazydocker"
 alias lgg="lazygit"
 alias ff="fzf --print0 | xargs -0 -o nvim"
 alias notebook="jupyter-notebook"
+alias g="git"
 
 if type -q exa
     alias ls="exa"
