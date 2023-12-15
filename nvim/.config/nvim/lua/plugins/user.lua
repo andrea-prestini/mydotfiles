@@ -11,6 +11,12 @@ return { {
     lazy = false
   },
   {
+  "craftzdog/solarized-osaka.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},
+  },
+  {
     "tveskag/nvim-blame-line",
     lazy = false
   },
