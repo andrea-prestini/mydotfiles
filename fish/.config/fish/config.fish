@@ -201,6 +201,7 @@ alias lgg="lazygit"
 alias ff="fzf --print0 | xargs -0 -o nvim"
 alias notebook="jupyter-notebook"
 alias g="git"
+alias t="tig"
 
 if type -q exa
     alias ls="exa"
