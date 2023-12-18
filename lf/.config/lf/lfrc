@@ -154,6 +154,8 @@ map F fzf_jump
 map ee $nvim "$f"
 map es $subl "$f"
 map ev $code "$f"
+map eb $ min $f
+map eo $ thunar .
 
 # Archive Mappings
 map az zip
