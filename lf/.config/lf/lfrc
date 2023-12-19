@@ -2,7 +2,21 @@
 set hidden false
 set drawbox true
 set icons true
-set ignorecase true
+set shell bash
+set shellopts '-eu'
+set ifs "\n"
+set scrolloff 10
+set icons
+
+# set drawbox
+set incsearch
+set smartcase
+set ignorecase
+set anchorfind
+set findlen 1
+set tabstop 4
+set info 'size'
+set dircounts
 
 # set previewer lf-previewer
 # set cleaner lf-cleaner
@@ -11,6 +25,32 @@ set cleaner ctpvclear
 &ctpv -s $id
 &ctpvquit $id
 
+# QUIT CD
+
+
+cmd q ${{
+  tmp="/tmp/LF_LAST_DIR_PATH"
+  dir="$(cat "$tmp")"
+  if [ "$PWD" == "$dir" ]; then
+    lf -remote "send $id quit"
+  else
+    echo "Changed directory to ''$dir' from '$PWD'. Use \`q!\` to force quit."
+    read -s -p "Press enter to continue"
+  fi
+}}
+
+cmd q! :{{
+  quit
+}}
+
+cmd wq ${{
+  tmp="/tmp/LF_LAST_DIR_PATH"
+  echo "$PWD" > $tmp
+  lf -remote "send $id quit"
+}}
+
+
+# FAST Quit
 map x quitcd
 cmd quitcd ${{
 	echo "1" > "$LF_TEMPDIR"/cdtolastdir
@@ -18,6 +58,7 @@ cmd quitcd ${{
 }}
 
 # Custom Functions
+# OPEN
 cmd open ${{
     case $(file --mime-type "$f" -bL) in
         text/*|application/json) nvim "$f";;
@@ -25,18 +66,104 @@ cmd open ${{
     esac
 }}
 
+
+# Make dir
 cmd mkdir ${{
   printf "Directory Name: "
   read ans
   mkdir $ans
 }}
 
+# Create a directory with the selected items
+cmd new-folder-with-selection ${{
+  set -f
+  printf "Directory name: "
+  read newd
+  mkdir -- "$newd"
+  mv -- $fx "$newd"
+}}
+
+
+# DELETE
+cmd delete ${{
+  set -f
+  printf "\n$fx\n"
+  printf "delete?[y/N]"
+  read ans
+  if [[ $ans == "y" ]]; then
+    rm -rf $fx
+  fi
+}}
+
+
+# SELECT All - Inverse
+cmd select-all :unselect; invert
+
+
+# Bulk rename on selected files or all the non-hidden files in the current directory if no selection
+cmd bulk-rename ${{
+  old="$(mktemp)"
+  new="$(mktemp)"
+  if [ -n "$fs" ]; then
+    fs="$(basename $fs)"
+  else
+    fs="$(ls)"
+  fi
+  printf '%s\n' "$fs" >"$old"
+  printf '%s\n' "$fs" >"$new"
+  $EDITOR "$new"
+  [ "$(wc -l < "$new")" -ne "$(wc -l < "$old")" ] && exit
+  paste "$old" "$new" | while IFS= read -r names; do
+    src="$(printf '%s' "$names" | cut -f1)"
+    dst="$(printf '%s' "$names" | cut -f2)"
+    if [ "$src" = "$dst" ] || [ -e "$dst" ]; then
+        continue
+    fi
+    mv -- "$src" "$dst"
+  done
+  rm -- "$old" "$new"
+  lf -remote "send $id unselect"
+}}
+
+
+# Copy the file names (including extension) of the selections separated by \n
+cmd copy-filename ${{
+  names="$(echo $fx | tr ' ' '\n' | xargs -I{} basename {})"
+  echo $names | tr ' ' '\n' | pbcopy
+}}
+
+# Copy the absolute paths of selections separated by \n
+cmd copy-absolute-path ${{
+  echo $fx | tr ' ' '\n' | pbcopy
+}}
+
+
+# Select the file or directory via fzf
+cmd fzf-select ${{
+  IFS=' '
+  exclude=$(cat $HOME/exclude | sed 's/^/--exclude /' | tr '\n' ' ')
+  select=$(fd --hidden --follow $exclude | fzf) || true
+  lf -remote "send $id select $select"
+}}
+
+# cd into the selected directory via fzf
+cmd fzf-cd ${{
+  IFS=' '
+  exclude=$(cat $HOME/exclude | sed 's/^/--exclude /' | tr '\n' ' ')
+  select=$(fd --type d --hidden --follow $exclude | fzf) || true
+  lf -remote "send $id cd $select"
+}}
+
+
+
+# Make file
 cmd mkfile ${{
   printf "File Name: "
   read ans
   $EDITOR $ans
 }}
 
+# CHMOD
 cmd chmod ${{
   printf "Mode Bits: "
   read ans
@@ -55,44 +182,46 @@ cmd sudomkfile ${{
   sudo $EDITOR $ans
 }}
 
+
+# REMOVE -rf
 cmd rmf ${{
   rm -rf $f
 }}
 
 
 
-cmd fzf_jump ${{
-  res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location')"
-  if [ -f "$res" ]; then
-    cmd="select"
-  elif [ -d "$res" ]; then
-    cmd="cd"
-  fi
-  lf -remote "send $id $cmd \"$res\""
-}}
+# cmd fzf_jump ${{
+#   res="$(find . -maxdepth 3 | fzf --reverse --header='Jump to location')"
+#   if [ -f "$res" ]; then
+#     cmd="select"
+#   elif [ -d "$res" ]; then
+#     cmd="cd"
+#   fi
+#   lf -remote "send $id $cmd \"$res\""
+# }}
 
-cmd broot_jump ${{
-  f=$(mktemp)
-  res="$(broot --outcmd $f && cat $f | sed 's/cd //')"
-  rm -f "$f"
-  if [ -f "$res" ]; then
-    cmd="select"
-  elif [ -d "$res" ]; then
-    cmd="cd"
-  fi
-  lf -remote "send $id $cmd \"$res\""
-}}
+# cmd broot_jump ${{
+#   f=$(mktemp)
+#   res="$(broot --outcmd $f && cat $f | sed 's/cd //')"
+#   rm -f "$f"
+#   if [ -f "$res" ]; then
+#     cmd="select"
+#   elif [ -d "$res" ]; then
+#     cmd="cd"
+#   fi
+#   lf -remote "send $id $cmd \"$res\""
+# }}
 
 cmd open_config  ${{
   $EDITOR $(bookmenu -b ~/.config/bookmenu/configs -f fzf -o)
 }}
 
-cmd dragon %dragon-drag-and-drop -a -x $fx
-cmd dragon-stay %dragon-drag-and-drop -a $fx
-cmd dragon-individual %dragon-drag-and-drop $fx
-cmd cpdragon %cpdragon
-cmd mvdragon %mvdragon
-cmd dlfile %dlfile
+# cmd dragon %dragon-drag-and-drop -a -x $fx
+# cmd dragon-stay %dragon-drag-and-drop -a $fx
+# cmd dragon-individual %dragon-drag-and-drop $fx
+# cmd cpdragon %cpdragon
+# cmd mvdragon %mvdragon
+# cmd dlfile %dlfile
 
 # Archive bindings
 cmd unarchive ${{
@@ -140,22 +269,25 @@ cmd stripspace %stripspace "$f"
 
 # Bindings
 # Remove some defaults
-map m
-map o
-map n
-map "'"
-map '"'
+map gh
+map d
+map y
+map <space>
+map zh
 map d
 map c
-map e
-map F fzf_jump
+
+
+# map F fzf_jump
 
 # File Openers
-map ee $nvim "$f"
-map es $subl "$f"
-map ev $code "$f"
-map eb $ min $f
+map e
+map ee $nvim $fx
+map es $subl $fx"
+map evs $code $fx
+map eb $ min $fx
 map eo $ thunar .
+map ev $vimv $fx
 
 # Archive Mappings
 map az zip
@@ -165,57 +297,91 @@ map ab targz
 map au unarchive
 
 # Trash Mappings
-map dd trash
-map dc clear_trash
-map dr restore_trash
-map dR rmf
+map T trash
+map Tc clear_trash
+map Tr restore_trash
 
 
 
 # Basic Functions
-map . set hidden!
-map DD delete
+map <tab> :toggle;down
+map yy copy
+map yn copy-filename
+map yP copy-absolute-path
+map <enter> shell
+map D delete
+map Dr rmf
+
+# list the size of each item in the current directory
+map u
+map ug $du -csh *
+map <c-f> fzf-select
+map <c-j> fzf-cd
+
+# give a name and then make a directory
+map <c-n> push :mkdir<space>
+map <a-n> new-folder-with-selection
+map x cut
+
+# give a name and then use neovim to edit it
+map V push :!nvim<space>
+
+# Navigate among the parent directories
+map [ push hkl
+map ] push hjl
+
+# Rename
+map r
+map A rename # at the very end
+map I push A<c-a> # at the very beginning
+map rn push A<c-u> # rename the filename
+map re push A<c-f><c-k> # rename the extension
+map <c-r> bulk-rename
+# Use <space> as the leader key
+# compress (give a name like abc and it will compress the selected items to abc.zip)
+map <space>c push :zip<space>
+# extract
+map <space>x extract
+
+# BASIC function
+map z. set hidden!
 map p paste
 map x cut
 map y copy
-map <enter> open
+map m
 map mf mkfile
 map mr sudomkfile
 map md mkdir
+map ms mark-save
+map mR mark-remove
+map mL mark-load
+
+
+
+
 map ch ahmod
-map bg setwallpaper
 map o open_config
-map br $vimv $fx
 map r rename
 map H top
 map L bottom
 map R reload
 map C clear
 map U unselect
+cmap <tab> cmd-menu-complete
+cmap <backtab> cmd-menu-complete-back
+
 
 # Movement
-map gtr cd ~/.local/share/Trash/files
-
-map gv. cd ~/Video/
-
-
-map gp. cd ~/Immagini/
-
-
-map gd cd ~/Documenti/
-
-map gD cd ~/Scaricati/
-
-map ge cd ~/Scrivania/
-
-map gs. cd ~/scripts
-
-
-map gc cd ~/.config
-map gl cd ~/.local
-map gE cd /etc
-map gU. cd /usr
-map gUs cd /usr/share
-
-map gh cd ~
+map Jtr cd ~/.local/share/Trash/files
+map Jv. cd ~/Video/
+map Ji cd ~/Immagini/
+map Jd cd ~/Documenti/
+map Js cd ~/Scaricati/
+map Jsc cd ~/Scrivania/
+map Jc cd ~/.config
+map Jl cd ~/.local
+map JE cd /etc
+map JU. cd /usr
+map JUs cd /usr/share
+map Jh cd ~
 
