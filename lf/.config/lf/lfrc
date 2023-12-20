@@ -317,6 +317,7 @@ map u
 map ug $du -csh *
 map <c-f> fzf-select
 map <c-j> fzf-cd
+map <c-o> $thunar .
 
 # give a name and then make a directory
 map <c-n> push :mkdir<space>
