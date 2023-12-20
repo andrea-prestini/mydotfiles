@@ -372,16 +372,16 @@ cmap <backtab> cmd-menu-complete-back
 
 
 # Movement
-map Jtr cd ~/.local/share/Trash/files
-map Jv. cd ~/Video/
-map Ji cd ~/Immagini/
-map Jd cd ~/Documenti/
-map Js cd ~/Scaricati/
-map Jsc cd ~/Scrivania/
-map Jc cd ~/.config
-map Jl cd ~/.local
-map JE cd /etc
-map JU. cd /usr
-map JUs cd /usr/share
-map Jh cd ~
+map gtr cd ~/.local/share/Trash/files
+map gv. cd ~/Video/
+map gi cd ~/Immagini/
+map gd cd ~/Documenti/
+map gs cd ~/Scaricati/
+map gsc cd ~/Scrivania/
+map gc cd ~/.config
+map gl cd ~/.local
+map gE cd /etc
+map gU. cd /usr
+map gUs cd /usr/share
+map gh cd ~
 
