@@ -10,6 +10,10 @@ return { {
     "olimorris/onedarkpro.nvim",
     lazy = false
   },
+    {
+      "MattesGroeger/vim-bookmarks",
+      lazy = false
+},
   {
   "craftzdog/solarized-osaka.nvim",
   lazy = false,
