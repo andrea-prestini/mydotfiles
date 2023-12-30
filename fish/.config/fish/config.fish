@@ -202,6 +202,8 @@ alias ff="fzf --print0 | xargs -0 -o nvim"
 alias notebook="jupyter-notebook"
 alias g="git"
 alias t="tig"
+alias ju="docker run --rm -p 8888:8888 --name notebook -it jupyter/scipy-notebook:latest"
+
 
 if type -q exa
     alias ls="exa"
