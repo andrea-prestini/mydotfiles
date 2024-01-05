@@ -1,0 +1,139 @@
+#!/bin/bash
+
+## Files
+CONFIG="$HOME/.config/hypr/wofi/config"
+STYLE="$HOME/.config/hypr/wofi/style.css"
+COLORS="$HOME/.config/hypr/wofi/colors"
+
+## Wofi Command
+wofi_command="wofi --show dmenu \
+			--conf ${CONFIG} --style ${STYLE} --color ${COLORS} \
+			--width=350 --height=380 \
+			--cache-file=/dev/null \
+			--hide-scroll --no-actions \
+			--define=matching=fuzzy"
+
+
+notification(){
+  notify-send "Now Playing: Lofi Radio"
+}
+
+menu(){
+  printf "1. CODE\n"
+  printf "2. Chill-YT\n"
+  printf "3. RELAX\n"
+  printf "4. CLASSIC\n"
+  printf "5. LOFI Chill music\n"
+  printf "6. SmoothChill\n"
+  printf "7. DEEP Focus\n"
+  printf "8. Fasetya\n"
+  printf "9. Lofi Zone\n"
+  printf "10. JAZZ\n"
+  printf "11. Epic Music\n"
+  printf "12. DEEP Focus\n"
+  printf "13. DEEP Night Focus\n"
+  printf "14. Raining Days\n"
+  printf "15. Sun and Moon Meditation\n"
+  printf "16. Viking Music\n"
+  printf "17. Live for CODING\n"
+  printf "18. MR ROBOT\n"
+}
+
+main() {
+  choice=$(menu | ${wofi_command} | cut -d. -f1)
+
+  case $choice in
+    1)
+      notification
+      mpv "https://www.youtube.com/watch?v=M5QY2_8704o" --no-video
+      return
+      ;;
+    2)
+      notification
+      mpv --vid=no "https://www.youtube.com/watch?v=jfKfPfyJRdk"
+      return
+      ;;
+    3)
+      notification
+      mpv --vid=no "https://www.youtube.com/watch?v=BYl7v0YsX9g"
+      return
+      ;;
+    4)
+      notification ;
+      mpv --vid=no "https://www.youtube.com/watch?v=lMmLHchT4Ho"
+      return
+      ;;
+    5)
+      notification ;
+      mpv --vid=no "https://www.youtube.com/watch?v=cIZhlFIyJ_Y"
+      return
+      ;;
+    6)
+      notification ;
+      mpv "https://media-ssl.musicradio.com/SmoothChill"
+      return
+      ;;
+    7)
+      notification ;
+      mpv --vid=no "https://www.youtube.com/watch?v=9FANloyY_Wc&list=PLMdXGwSnHj3ryllZk9C76UY_swaijTMOe&index=1&t=75s"
+      return
+      ;;
+    8)
+      notification ;
+      mpv --shuffle --ytdl-raw-options="cookies=/tmp/cookies.txt" --vid=no https://www.youtube.com/playlist\?list\=PLusoefCj_Mkn6dRQMc3MxUGFHLeYT4y49
+      return
+      ;;
+    9)
+      notification ;
+      mpv --shuffle --ytdl-raw-options="cookies=/tmp/cookies.txt" --vid=no https://www.youtube.com/watch?v=GaW13eDQO6s
+      return
+      ;;
+    10)
+      notification ;
+      mpv --vid=no "https://www.youtube.com/watch?v=vHcj3REfLc0&list=PLMdXGwSnHj3ryllZk9C76UY_swaijTMOe&index=2&t=149s"
+      return
+      ;;
+    11)
+      notification ;
+      mpv --vid=no "https://www.youtube.com/watch?v=ODp_vhMxcGQ"
+      return
+      ;;
+    12)
+      notification ;
+      mpv --vid=no "https://www.youtube.com/watch?v=9FANloyY_Wc&list=PLMdXGwSnHj3ryllZk9C76UY_swaijTMOe&index=3&t=137s"
+      return
+      ;;
+    13)
+      notification ;
+      mpv --vid=no "https://www.youtube.com/watch?v=4cEKAYnxbrk&t=16s"
+      return
+      ;;
+    14)
+      notification ;
+      mpv --vid=no "https://www.youtube.com/watch?v=MZhivjxcF-M"
+      return
+      ;;
+    15)
+      notification ;
+      mpv --vid=no "https://www.youtube.com/watch?v=jXIe5R6lv4c"
+      return
+      ;;
+    16)
+      notification ;
+      mpv --vid=no "https://www.youtube.com/watch?v=9WXsdApQIY4"
+      return
+      ;;
+    17)
+      notification ;
+      mpv --vid=no "https://www.youtube.com/watch?v=4kLviL8XwAI"
+      return
+      ;;
+    18)
+      notification ;
+      mpv --vid=no "https://www.youtube.com/watch?v=_tUBCmGBO3A&t=444s"
+      return
+      ;;
+  esac
+}
+
+pkill -f http && notify-send "Lofi Radio stopped" || main
