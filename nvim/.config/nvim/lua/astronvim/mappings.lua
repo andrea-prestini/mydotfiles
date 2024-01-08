@@ -23,6 +23,7 @@ local sections = {
 }
 
 -- Normal --
+maps.n["<leader>A"] = { "<cmd>CodeiumToggle<cr>", desc="CodeiumToggle"}
 maps.n["<leader>D"] = sections.D
 maps.n["<leader>Dg"] = { "<cmd>Neogen<cr>", desc = "Docstring GOOGLE" }
 maps.n["<leader>Df"] = { "<cmd>Neogen file<cr>", desc="Docstring FILE" }
