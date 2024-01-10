@@ -6,6 +6,10 @@ return { {
       require("todo-comments").setup()
     end
   },
+  -- {
+  --   "markwoodhall/vim-codelens",
+  --   lazy = false
+  -- },
   {
     "olimorris/onedarkpro.nvim",
     lazy = false
