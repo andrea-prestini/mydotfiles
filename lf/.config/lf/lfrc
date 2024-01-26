@@ -283,11 +283,12 @@ map c
 # File Openers
 map e
 map ee $nvim $fx
-map es $subl $fx"
+map es $subl $fx
+map ev $vimv $fx
 map evs $code $fx
 map eb $ min $fx
+map em $ mpv $fx
 map eo $ thunar .
-map ev $vimv $fx
 
 # Archive Mappings
 map az zip
