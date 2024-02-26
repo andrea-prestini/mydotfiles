@@ -265,6 +265,7 @@ end
 -- SymbolsOutline
 if is_available "aerial.nvim" then
   maps.n["<leader>l"] = sections.l
+  maps.n["<leader>lx"] = { "<cmd>ImportSymbol<cr>", desc = "Import Symbols" }
   maps.n["<leader>lS"] = { function() require("aerial").toggle() end, desc = "Symbols outline" }
 end
 
