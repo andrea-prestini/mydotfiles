@@ -18,6 +18,10 @@ return { {
       "MattesGroeger/vim-bookmarks",
       lazy = false
 },
+{
+  "wookayin/vim-autoimport",
+  lazy = false
+},
   {
   "craftzdog/solarized-osaka.nvim",
   lazy = false,
