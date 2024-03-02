@@ -191,6 +191,7 @@ end
 
 ### ALIASES ###
 ### Andrea Aliases ###
+alias notizie="newsboat"
 alias c="clear"
 alias nv="nvim"
 alias rmf="rm -rf"
