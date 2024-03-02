@@ -8,12 +8,12 @@ https://yewtu.be/feed/channel/UCJdmdUp5BrsWsYVQUylCMLg linux youtube inglese
 
 2 "~   -==-   Giornali -==-"
 http://www.repubblica.it/rss/homepage/rss2.0.xml news italiano
-https://www.ansa.it/sito/ansait_rss.xml     news italiano
-https://www.ansa.it/sito/notizie/cronaca/cronaca_rss.xml
-https://www.ansa.it/sito/notizie/politica/politica_rss.xml
-https://www.ansa.it/sito/notizie/mondo/mondo_rss.xml
-https://www.ansa.it/sito/notizie/economia/economia_rss.xml
-https://www.ansa.it/sito/notizie/topnews/topnews_rss.xml
+https://www.ansa.it/sito/ansait_rss.xml     news italiano "~Ansa NEWS"
+https://www.ansa.it/sito/notizie/cronaca/cronaca_rss.xml news cronaca "~Ansa Cronaca"
+https://www.ansa.it/sito/notizie/politica/politica_rss.xml news politica "~Ansa Politica"
+https://www.ansa.it/sito/notizie/mondo/mondo_rss.xml news mondo "~Ansa Mondo"
+https://www.ansa.it/sito/notizie/economia/economia_rss.xml news economia "~Ansa Economia"
+https://www.ansa.it/sito/notizie/topnews/topnews_rss.xml news top "~Ansa TopTrend"
 
 3 "~   -==-   YouTube -==-"
 
@@ -21,14 +21,13 @@ https://yewtu.be/feed/channel/UCVls1GmFKf6WlTraIb_IaJg youtube linux inglese
 https://yewtu.be/feed/channel/UC2eYFnH61tmytImy1mTYvhA youtube linux inglese
 https://yewtu.be/feed/channel/UCld68syR8Wi-GY_n4CaoJGA youtube linux inglese
 https://yewtu.be/feed/channel/UCngn7SVujlvskHRvRKc1cTw youtube linux inglese
-https://yewtu.be/feeds/videos.xml?channel_id=UCXE2GTf2Z82pzbu1jfMs6HA
+https://yewtu.be/feeds/videos.xml?channel_id=UCXE2GTf2Z82pzbu1jfMs6HA youtube
 https://yewtu.be/feed/channel/UC4V3oCikXeSqYQr0hBMARwg youtube news italiano
-https://yewtu.be/feeds/videos.xml?channel_id=UCMOiTfbUXxUFqJJtCQGHrrA youtube Boldrin
-https://yewtu.be/feeds/videos.xml?channel_id=UCrdEJmK5bgFte04-UF7o29Q
-https://yewtu.be/feeds/videos.xml?channel_id=UCZQIPu6LfVfzEnJqDHpWamg
-https://yewtu.be/feeds/videos.xml?channel_id=UC0sUzmZ0CHvVCVrpRfGKZfw "~My linux fork work"
-https://yewtu.be/feeds/videos.xml?channel_id=UCBOtZaVafz_5OmUrqJAVStQ
-
+https://yewtu.be/feeds/videos.xml?channel_id=UCMOiTfbUXxUFqJJtCQGHrrA youtube Boldrini economia
+https://yewtu.be/feeds/videos.xml?channel_id=UCrdEJmK5bgFte04-UF7o29Q youtube politica economia
+https://yewtu.be/feeds/videos.xml?channel_id=UCZQIPu6LfVfzEnJqDHpWamg youtube
+https://yewtu.be/feeds/videos.xml?channel_id=UC0sUzmZ0CHvVCVrpRfGKZfw youtube "~My linux fork work" linux
+https://yewtu.be/feeds/videos.xml?channel_id=UCBOtZaVafz_5OmUrqJAVStQ youtube
 https://yewtu.be/feed/channel/UCSKSPISyIsexROCyKZLkD9w youtube cool scienza
 
 4 "~   -==-   Reddit -==-"
