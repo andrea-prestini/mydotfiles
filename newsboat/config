@@ -11,8 +11,8 @@ notify-format "%n"
 
 # Feed settings
 prepopulate-query-feeds yes
-refresh-on-startup yes
-auto-reload yes
+refresh-on-startup no
+auto-reload no
 reload-time 20
 reload-threads 100
 
@@ -21,6 +21,8 @@ macro w set browser "mpv --script-opts=ytdl_hook-ytdl_path=yt-dlp %u &> /dev/nul
 macro v set browser "mpv %u &> /dev/null &" ; open-in-browser ; set browser "elink %u"
 
 download-path "$HOME/Scaricati/"
+
+# test Andrea
 
 # download video
 macro d set browser "yt-dlp"; open-in-browser ; set browser linkhandler
