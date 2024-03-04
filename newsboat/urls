@@ -1,5 +1,9 @@
 "query:Unread:unread = \"yes\"" meta
-
+"query:> \Fresh1 Articles:age < \"1\" and unread = \"yes\"" FRESH1
+"query:> \Fresh3 Articles:age < \"3\" and unread = \"yes\"" FRESH3
+"query:> \Fresh7 Articles:age < \"7\" and unread = \"yes\"" FRESH7
+"query:> \Fresh15 Articles:age < \"15\" and unread = \"yes\"" FRESH15
+"query:> \Fresh30 Articles:age < \"30\" and unread = \"yes\"" FRESH30
 
 "  Linux news"
 https://www.archlinux.org/feeds/news/ "linux" "arch" "inglese"
