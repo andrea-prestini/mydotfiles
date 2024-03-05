@@ -14,64 +14,68 @@ prepopulate-query-feeds yes
 refresh-on-startup no
 auto-reload no
 reload-time 20
-reload-threads 100
 
 # launch video player
 macro w set browser "mpv --script-opts=ytdl_hook-ytdl_path=yt-dlp %u &> /dev/null &" ; open-in-browser ; set browser "w3m %u 2>/dev/null && rm ~/.w3m/cookie"
 macro v set browser "mpv %u &> /dev/null &" ; open-in-browser ; set browser "elink %u"
 
 download-path "$HOME/Scaricati/"
-
-# test Andrea
-
 # download video
 macro d set browser "yt-dlp"; open-in-browser ; set browser linkhandler
 
 # download audio only
 macro a set browser "yt-dlp --embed-medatada -xic -f bestaudio/best" ; open-in-browser ; set browser linkhandler
 
+
 # bind keys
-bind-key G end
-bind-key g home
-bind-key , macro-prefix
-bind-key h quit
-bind-key SPACE pagedown
-bind-key b pageup
-bind-key BACKSPACE quit
 bind-key j down
 bind-key k up
 bind-key j next articlelist
 bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key G end
+bind-key g home
+bind-key d pagedown
+bind-key u pageup
 bind-key l open
+bind-key h quit
+bind-key a toggle-article-read
+bind-key n next-unread
+bind-key N prev-unread
 bind-key H prev-feed
 bind-key L next-feed
 bind-key c toggle-show-read-feeds
 bind-key u show-urls
 
-color background red default bold
-color listfocus black yellow
-color listfocus_unread black yellow
-color listnormal yellow default
-color listnormal_unread red default
-color info black green
- # feedlist-format "%?T?║%4i %n %8u %8T %t &╠═══════════════════════════════════════════════════════════════%t?"
-  feedlist-format "%?T?║%4i %n %8u  %t &╠═══════════════════════════════════════════════════════════════%t?"
-  highlight feedlist "[║│]" color3 color0
-  highlight feedlist "╠═.*" color3 color0 
+color listnormal cyan default
+color listfocus black yellow standout bold
+color listnormal_unread blue default
+color listfocus_unread yellow default bold
+color info red black bold
+color article white default bold
 
-highlight all "══.*" yellow default standout bold
-highlight all "-==-.*" yellow default standout bold
-highlight all "═\\[.*" yellow default standout bold
-highlight feedlist ".*(0/[0-9]+))" cyan
+# browser linkhandler
+macro , open-in-browser
+macro t set browser "qndl" ; open-in-browser ; set browser linkhandler
+macro a set browser "tsp yt-dlp --embed-metadata -xic -f bestaudio/best --restrict-filenames" ; open-in-browser ; set browser linkhandler
+macro v set browser "setsid -f mpv" ; open-in-browser ; set browser linkhandler
+macro w set browser "lynx" ; open-in-browser ; set browser linkhandler
+macro d set browser "dmenuhandler" ; open-in-browser ; set browser linkhandler
+macro c set browser "echo %u | xclip -r -sel c" ; open-in-browser ; set browser linkhandler
+macro C set browser "youtube-viewer --comments=%u" ; open-in-browser ; set browser linkhandler
+macro p set browser "peertubetorrent %u 480" ; open-in-browser ; set browser linkhandler
+macro P set browser "peertubetorrent %u 1080" ; open-in-browser ; set browser linkhandler
 
-highlight article "(^Feed:.*|^Titolo:.*|^Autore:.*)" red default bold
-highlight article "(^Collegamento:.*|^Data:.*)" green default bold
-highlight article "https?://[^ ]+" blue default bold
-highlight article "^(Titolo):.*$" yellow default bold
-highlight article "^(Autore):.*$" cyan default bold
+highlight all "---.*---" yellow
+highlight feedlist ".*(0/0))" black
+highlight article "(^Feed:.*|^Title:.*|^Author:.*)" cyan default bold
+highlight article "(^Link:.*|^Date:.*)" default default
+highlight article "https?://[^ ]+" green default
+highlight article "^(Title):.*$" blue default
 highlight article "\\[[0-9][0-9]*\\]" magenta default bold
-highlight article "\\[immagine\\ [0-9]+\\]" green default
-highlight article "\\[embedded flash: [0-9][0-9]*\\]" green default
+highlight article "\\[image\\ [0-9]+\\]" green default bold
+highlight article "\\[embedded flash: [0-9][0-9]*\\]" green default bold
 highlight article ":.*\\(link\\)$" cyan default
 highlight article ":.*\\(image\\)$" blue default
 highlight article ":.*\\(embedded flash\\)$" magenta default

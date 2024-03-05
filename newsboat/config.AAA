@@ -1,0 +1,85 @@
+# browser "torsocks w3m %u 2>/dev/null && rm ~/.w3m/cookie"
+# browser $BROWSER
+browser brave
+pager internal
+article-sort-order date-asc
+datetime-format "%d/%m/%Y"
+
+notify-always no
+notify-program "new_articles"
+notify-format "%n"
+
+# Feed settings
+prepopulate-query-feeds yes
+refresh-on-startup no
+auto-reload no
+reload-time 20
+reload-threads 100
+
+# launch video player
+macro w set browser "mpv --script-opts=ytdl_hook-ytdl_path=yt-dlp %u &> /dev/null &" ; open-in-browser ; set browser "w3m %u 2>/dev/null && rm ~/.w3m/cookie"
+macro v set browser "mpv %u &> /dev/null &" ; open-in-browser ; set browser "elink %u"
+
+download-path "$HOME/Scaricati/"
+
+# test Andrea
+
+# download video
+macro d set browser "yt-dlp"; open-in-browser ; set browser linkhandler
+
+# download audio only
+macro a set browser "yt-dlp --embed-medatada -xic -f bestaudio/best" ; open-in-browser ; set browser linkhandler
+
+# bind keys
+bind-key G end
+bind-key g home
+bind-key , macro-prefix
+bind-key h quit
+bind-key SPACE pagedown
+bind-key b pageup
+bind-key BACKSPACE quit
+bind-key j down
+bind-key k up
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key l open
+bind-key H prev-feed
+bind-key L next-feed
+bind-key c toggle-show-read-feeds
+bind-key u show-urls
+
+color listnormal default default
+color listfocus default default reverse
+color listnormal_unread default default bold
+color listfocus_unread default default bold underline
+color info red black bold
+color article default default
+
+highlight article "^Feed:.*" magenta default 
+highlight article "^Title:.*" yellow default bold
+highlight article "^Author:.*" green default
+highlight article "^Date:.*" color223 default
+highlight article "^Link:.*" blue default
+highlight article "^Flags:.*" color9 default
+highlight article "\\[[0-9][0-9]*\\]" color66 default bold
+highlight article "\\[image [0-9][0-9]*\\]" color109 default bold
+highlight article "\\[embedded flash: [0-9][0-9]*\\]" color66 default bold
+
+#highlight feedlist "[╒╘╞]═.*═[╛╕╡]" yellow default bold
+highlight feedlist "[║│]" yellow default bold
+highlight feedlist "╠═.*" yellow default bold
+
+highlight feedlist "\\(Youtube\\) .*" red
+highlight feedlist "\\(Twitter\\) .*" blue
+highlight feedlist "\\(Reddit\\) .*" green
+highlight feedlist "\\(Podcast\\) .*" magenta
+highlight feedlist "\\(Blog\\) .*" cyan
+#highlight feedlist "\\(Reddit\\) .*" color166 
+
+
+feedlist-format "%?T?║%4i %n %8u (%T) %t &╠═════════════════════════════════════════════════════%t?"
+#feedlist-format "%?T?║%4i %n %8u (%T) %t &╠%=═0%t?"
+#feedlist-format "%?T?║%4i %n %8u (%T) %t &%==11first%=x16SECOND%=~13third?"
+
+# vim: ft=config:
+
