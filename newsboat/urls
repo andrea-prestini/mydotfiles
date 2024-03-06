@@ -1,19 +1,16 @@
 "query:Unread:unread = \"yes\"" meta
 "query:Read:unread = \"no\"" meta
-"query:> \Fleg-S Articles:flags = \"S\"" STAR
-"query:> \Fleg-R Articles:flags = \"R\"" RIVEDERE
+"query:> \Flag_S-> Salvato Articles:flags = \"S\"" STAR
+"query:> \Flag_R-> Rivedere Articles:flags = \"R\"" RIVEDERE
 
+"query:Unread Articles (> 1 year old):unread = \"yes\" and age > 365"
 "query:Unread Articles (1 year old):unread = \"yes\" and age between 0:365"
 "query:Unread Articles (1 month old):unread = \"yes\" and age between 0:31"
 "query:Unread Articles (1 week old):unread = \"yes\" and age between 0:7"
+"query:Unread Articles (1 day old):unread = \"yes\" and age between 0:1"
 
-"-------------------  Linux news --------------------"
-https://www.archlinux.org/feeds/news/ "linux" "arch" "inglese"
-https://www.parabola.nu/feeds/news/ "linux" "arch" "parabola" "inglese"
-https://www.debian.org/News/news "linux" "debian" "inglese"
-https://trisquel.info/en/node/feed "linux" "trisquel"
-https://yewtu.be/feed/channel/UCJdmdUp5BrsWsYVQUylCMLg "linux" "Youtube" "inglese"
-https://stackoverflow.com/feeds/ "linux" "code" "~StackOverflow"
+
+
 
 "-------------------   Giornali ---------------------"
 https://yewtu.be/feed/channel/UC4V3oCikXeSqYQr0hBMARwg "Youtube" "news" "italiano"
@@ -24,6 +21,45 @@ https://www.ansa.it/sito/notizie/politica/politica_rss.xml "news" "politica" "~A
 https://www.ansa.it/sito/notizie/mondo/mondo_rss.xml "news" "mondo" "~Ansa Mondo"
 https://www.ansa.it/sito/notizie/economia/economia_rss.xml "news" "economia" "~Ansa Economia"
 https://www.ansa.it/sito/notizie/topnews/topnews_rss.xml "news" "top" "~Ansa TopTrend"
+https://news.google.com/rss/search?q=when:24h+allinurl:reuters.com&ceid=US:en&hl=en-US&gl=US "~Reuters" "world"
+https://feeds.bbci.co.uk/news/world/europe/rss.xml "~BBC Europe" "world"
+https://rss.nytimes.com/services/xml/rss/nyt/World.xml "~New York Times" "world"
+http://feeds.washingtonpost.com/rss/world "~Washington Post" "world" 
+
+"-------------------  Linux news --------------------"
+https://www.archlinux.org/feeds/news/ "linux" "arch" "inglese"
+https://www.parabola.nu/feeds/news/ "linux" "arch" "parabola" "inglese"
+https://www.Debian.org/News/news "linux" "debian" "inglese"
+https://trisquel.info/en/node/feed "linux" "trisquel"
+https://yewtu.be/feed/channel/UCJdmdUp5BrsWsYVQUylCMLg "linux" "Youtube" "inglese"
+https://stackoverflow.com/feeds/ "linux" "code" "~StackOverflow"
+https://newsboat.org/news.atom "linux" "newsboat"
+https://lwn.net/headlines/rss "~LWN.net" "nix"
+https://www.phoronix.com/rss.php "~Phoronix" "nix"
+https://www.linux-magazine.com/rss/feed/lmi_full "~Linux Magazine" "nix"
+https://feeds.feedburner.com/LinuxUprising "~LinuxUprising" "nix"
+https://feeds.feedburner.com/linuxtoday/linux "~LinuxToday" "nix"
+https://9to5linux.com/feed/ "~9to5Linux" "nix"
+
+
+"-------------------   Distro news -----------------"
+https://www.kernel.org/feeds/kdist.xml "~kernel.org" "distro" 
+https://www.archlinux.org/feeds/packages/x86_64/ "~Arch Packages" "distro"
+https://linuxsecurity.com/advisories/archlinux?format=feed&type=rss "~Arch Advisory"
+https://packages.debian.org/sid/newpkg?format=rss "~Debian Packages" "distro"
+https://www.debian.org/security/dsa-long "~Debian Advisory" "distro"
+
+
+"-------------------  Tech news --------------------"
+https://www.wired.com/feed "~WIRED" "tech"
+https://www.engadget.com/rss.xml "~Engadget" "tech"
+https://feeds.feedburner.com/TechCrunch/ "~TechCrunch" "tech"
+https://hnrss.org/frontpage "~Hacker News" "tech"
+http://feeds.arstechnica.com/arstechnica/index/ "~Ars Technica" "tech"
+http://rss.slashdot.org/Slashdot/slashdotMain "~Slashdot" "tech"
+https://gizmodo.com/rss "~Gizmodo" "tech"
+https://lifehacker.com/rss "~Lifehacker" "tech"
+
 
 "--------------------   YouTube ---------------------"
 https://yewtu.be/feed/channel/UCVls1GmFKf6WlTraIb_IaJg "Youtube" "linux" "inglese"
@@ -213,7 +249,10 @@ https://old.reddit.com/r/libreboot/.rss "reddit" "inglese" "reddit"
 https://old.reddit.com/r/unixporn/.rss "reddit" "inglese" "reddit"
 https://old.reddit.com/r/Italia/.rss "reddit" "italia" "reddit"
 https://old.reddit.com/r/italy/.rss "reddit" "italia" "reddit"
-
+https://www.reddit.com/r/linux/.rss "~r/linux" "reddit"
+https://www.reddit.com/r/debian/.rss "~r/debian" "reddit"
+https://www.reddit.com/r/linuxadmin/.rss "~r/linuxadmin" "reddit"
+https://www.reddit.com/r/commandline/.rss "~r/commandline" "reddit"
 
 "--------------------   Programming Learning --------"
 http://acko.net/blog/feed programming maths
@@ -247,6 +286,8 @@ http://nurpax.github.io/rss.xml programming
 http://treyhunner.com/atom.xml programming python
 https://pycoders.com/feed/bmtfgMEB programming
 https://xoofx.com/feed.xml programming
+http://www.hackerfactor.com/blog/index.php?/feeds/index.rss2 "programming" "hacking"
+
 
 
 
