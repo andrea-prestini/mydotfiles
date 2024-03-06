@@ -1,5 +1,9 @@
 # browser "torsocks w3m %u 2>/dev/null && rm ~/.w3m/cookie"
 # browser $BROWSER
+bookmark-interactive yes
+# bookmark-autopilot yes
+bookmark-cmd ~/.newsboat/scripts/bookmarks.sh
+save-path "~/.newsboat/articles/new/"
 browser brave
 pager internal
 article-sort-order date-asc
@@ -13,7 +17,9 @@ notify-format "%n"
 prepopulate-query-feeds yes
 refresh-on-startup no
 auto-reload no
-reload-time 20
+reload-time 60
+
+
 
 # launch video player
 macro w set browser "mpv --script-opts=ytdl_hook-ytdl_path=yt-dlp %u &> /dev/null &" ; open-in-browser ; set browser "w3m %u 2>/dev/null && rm ~/.w3m/cookie"
@@ -26,6 +32,10 @@ macro d set browser "yt-dlp"; open-in-browser ; set browser linkhandler
 # download audio only
 macro a set browser "yt-dlp --embed-medatada -xic -f bestaudio/best" ; open-in-browser ; set browser linkhandler
 
+# "star" or "favourite" an article - overwrites all existing flags!
+macro s edit-flags S
+macro r edit-flags R
+macro u edit-flags ''
 
 # bind keys
 bind-key j down

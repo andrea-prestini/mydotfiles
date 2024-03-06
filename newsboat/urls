@@ -1,21 +1,22 @@
 "query:Unread:unread = \"yes\"" meta
 "query:Read:unread = \"no\"" meta
-"query:> \Fresh1 Articles:age < \"1\" and unread = \"yes\"" FRESH1
-"query:> \Fresh3 Articles:age < \"3\" and unread = \"yes\"" FRESH3
-"query:> \Fresh7 Articles:age < \"7\" and unread = \"yes\"" FRESH7
-"query:> \Fresh15 Articles:age < \"15\" and unread = \"yes\"" FRESH15
-"query:> \Fresh30 Articles:age < \"30\" and unread = \"yes\"" FRESH30
+"query:> \Fleg-S Articles:flags = \"S\"" STAR
+"query:> \Fleg-R Articles:flags = \"R\"" RIVEDERE
 
-"  Linux news"
+"query:Unread Articles (1 year old):unread = \"yes\" and age between 0:365"
+"query:Unread Articles (1 month old):unread = \"yes\" and age between 0:31"
+"query:Unread Articles (1 week old):unread = \"yes\" and age between 0:7"
+
+"-------------------  Linux news --------------------"
 https://www.archlinux.org/feeds/news/ "linux" "arch" "inglese"
 https://www.parabola.nu/feeds/news/ "linux" "arch" "parabola" "inglese"
 https://www.debian.org/News/news "linux" "debian" "inglese"
 https://trisquel.info/en/node/feed "linux" "trisquel"
-https://yewtu.be/feed/channel/UCJdmdUp5BrsWsYVQUylCMLg "linux" "youtube" "inglese"
+https://yewtu.be/feed/channel/UCJdmdUp5BrsWsYVQUylCMLg "linux" "Youtube" "inglese"
 https://stackoverflow.com/feeds/ "linux" "code" "~StackOverflow"
 
-"   Giornali"
-https://yewtu.be/feed/channel/UC4V3oCikXeSqYQr0hBMARwg "youtube" "news" "italiano"
+"-------------------   Giornali ---------------------"
+https://yewtu.be/feed/channel/UC4V3oCikXeSqYQr0hBMARwg "Youtube" "news" "italiano"
 http://www.repubblica.it/rss/homepage/rss2.0.xml "news" "italiano"
 https://www.ansa.it/sito/ansait_rss.xml "news" "italiano" "~Ansa NEWS"
 https://www.ansa.it/sito/notizie/cronaca/cronaca_rss.xml "news" "cronaca" "~Ansa Cronaca"
@@ -24,25 +25,20 @@ https://www.ansa.it/sito/notizie/mondo/mondo_rss.xml "news" "mondo" "~Ansa Mondo
 https://www.ansa.it/sito/notizie/economia/economia_rss.xml "news" "economia" "~Ansa Economia"
 https://www.ansa.it/sito/notizie/topnews/topnews_rss.xml "news" "top" "~Ansa TopTrend"
 
-"   YouTube"
-https://yewtu.be/feed/channel/UCVls1GmFKf6WlTraIb_IaJg "youtube" "linux" "inglese"
-https://yewtu.be/feed/channel/UC2eYFnH61tmytImy1mTYvhA "youtube" "linux" "inglese"
-https://yewtu.be/feed/channel/UCld68syR8Wi-GY_n4CaoJGA "youtube" "linux" "inglese"
-https://yewtu.be/feed/channel/UCngn7SVujlvskHRvRKc1cTw "youtube" "linux" "inglese"
-https://yewtu.be/feeds/videos.xml?channel_id=UCXE2GTf2Z82pzbu1jfMs6HA "youtube"
-https://yewtu.be/feeds/videos.xml?channel_id=UCMOiTfbUXxUFqJJtCQGHrrA "youtube" "Boldrini" "economia"
-https://yewtu.be/feeds/videos.xml?channel_id=UCrdEJmK5bgFte04-UF7o29Q "youtube" "politica" "economia"
-https://yewtu.be/feeds/videos.xml?channel_id=UCZQIPu6LfVfzEnJqDHpWamg "youtube"
-https://yewtu.be/feeds/videos.xml?channel_id=UC0sUzmZ0CHvVCVrpRfGKZfw "youtube" "~My linux fork work" "linux"
-https://yewtu.be/feeds/videos.xml?channel_id=UCBOtZaVafz_5OmUrqJAVStQ "youtube"
-https://yewtu.be/feed/channel/UCSKSPISyIsexROCyKZLkD9w "youtube" "cool" "scienza"
+"--------------------   YouTube ---------------------"
+https://yewtu.be/feed/channel/UCVls1GmFKf6WlTraIb_IaJg "Youtube" "linux" "inglese"
+https://yewtu.be/feed/channel/UC2eYFnH61tmytImy1mTYvhA "Youtube" "linux" "inglese"
+https://yewtu.be/feed/channel/UCld68syR8Wi-GY_n4CaoJGA "Youtube" "linux" "inglese"
+https://yewtu.be/feed/channel/UCngn7SVujlvskHRvRKc1cTw "Youtube" "linux" "inglese"
+https://yewtu.be/feeds/videos.xml?channel_id=UCXE2GTf2Z82pzbu1jfMs6HA "Youtube"
+https://yewtu.be/feeds/videos.xml?channel_id=UCMOiTfbUXxUFqJJtCQGHrrA "Youtube" "Boldrini" "economia"
+https://yewtu.be/feeds/videos.xml?channel_id=UCrdEJmK5bgFte04-UF7o29Q "Youtube" "politica" "economia"
+https://yewtu.be/feeds/videos.xml?channel_id=UCZQIPu6LfVfzEnJqDHpWamg "Youtube"
+https://yewtu.be/feeds/videos.xml?channel_id=UC0sUzmZ0CHvVCVrpRfGKZfw "Youtube" "~My linux fork work" "linux"
+https://yewtu.be/feeds/videos.xml?channel_id=UCBOtZaVafz_5OmUrqJAVStQ "Youtube"
+https://yewtu.be/feed/channel/UCSKSPISyIsexROCyKZLkD9w "Youtube" "cool" "scienza"
 
-"   Reddit"
-https://old.reddit.com/r/libreboot/.rss "reddit" "inglese"
-https://old.reddit.com/r/unixporn/.rss "reddit" "inglese"
-https://old.reddit.com/r/Italia/.rss "reddit" "italia"
-https://old.reddit.com/r/italy/.rss "reddit" "italia"
-"   YouTube Subscriptions"
+"--------------------   YouTube Subscriptions -------"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw "YouTube Subscriptions"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC9T1oMLlmfOkSkOAAnvoL6A "YouTube Subscriptions"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCAhh41POT6froY75PsUl-MA "YouTube Subscriptions"
@@ -211,3 +207,78 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCslo2gcw4WDSSXyzTL9zWxg "Yo
 https://www.youtube.com/feeds/videos.xml?channel_id=UCnC-9IcGBeVuWccBypwOGuA "YouTube Subscriptions"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCyseO4nxaTQdlKWKfNA1DIA "YouTube Subscriptions"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCLIQn-_Y91WoGOXOntp-C-A "YouTube Subscriptions"
+
+"--------------------   Reddit ----------------------"
+https://old.reddit.com/r/libreboot/.rss "reddit" "inglese" "reddit"
+https://old.reddit.com/r/unixporn/.rss "reddit" "inglese" "reddit"
+https://old.reddit.com/r/Italia/.rss "reddit" "italia" "reddit"
+https://old.reddit.com/r/italy/.rss "reddit" "italia" "reddit"
+
+
+"--------------------   Programming Learning --------"
+http://acko.net/blog/feed programming maths
+http://adrianboeing.blogspot.com/feeds/posts/default programming
+http://android-developers.blogspot.com/feeds/posts/default programming android
+http://anki3d.org/feed/ programming graphics
+http://zserge.com/rss.xml programming
+http://blog.cmpxchg8b.com/feeds/posts/default programming
+http://number-none.com/blow/blog/feed.xml programming
+http://jvns.ca/atom.xml programming
+https://blogs.msdn.microsoft.com/visualstudio/feed/ programming
+http://www.epicshaders.com/feed/ programming graphics
+#https://bulldozer00.com/feed/ programming
+https://blog.plan99.net/feed programming
+https://rmarcus.info/blog/atom.xml programming
+https://erkaman.github.io/rss.xml programming
+https://www.blogger.com/feeds/5055426614227209030/posts/default programming
+http://kylehalladay.com/atom.xml programming
+https://jeffamstutz.io/feed/ programming
+http://www.elopezr.com/feed/ programming graphics
+https://hsivonen.fi/feed/atom/ programming rust
+https://apoorvaj.io/rss.xml programming graphics
+https://code.visualstudio.com/feed.xml programming
+https://schuttejoe.github.io/index.xml programming graphics
+https://kazakov.life/feed/ programming
+https://www.kusma.xyz/feed.xml programming
+https://nical.github.io/feeds/all.atom.xml programming
+http://bitshifter.github.io/atom.xml programming graphics
+https://technik90.blogspot.com/feeds/posts/default programming graphics
+http://nurpax.github.io/rss.xml programming
+http://treyhunner.com/atom.xml programming python
+https://pycoders.com/feed/bmtfgMEB programming
+https://xoofx.com/feed.xml programming
+
+
+
+"--------------------   Machine Learning ------------"
+http://www.cleverhans.io/feed.xml "machinelearning"
+http://bair.berkeley.edu/blog/feed.xml "machinelearning"
+http://feeds.feedburner.com/Pyimagesearch "machinelearning"
+http://karpathy.github.io/feed.xml "machinelearning"
+https://guillaumegenthial.github.io/feed.xml "machinelearning"
+http://deliprao.com/feed "machinelearning"
+https://sgugger.github.io/feeds/all.atom.xml "machinelearning"
+https://medium.com/feed/@radekosmulski "machinelearning"
+https://medium.com/feed/@gidishperber "machinelearning"
+https://win-vector.com/feed/ "machinelearning"
+
+
+
+"--------------------   Math feed -------------------"
+http://blog.wolfram.com/feed/ "maths"
+http://blog.kenperlin.com/?feed=rss2 "maths"
+http://boredzo.org/blog/feed/atom "maths"
+http://www.elegantcoding.com/feeds/posts/default "maths"
+http://jeremykun.com/feed/ maths
+
+
+"--------------------   SysAdmin feed ---------------"
+http://blog.linuxmint.com/?feed=rss2 linux "sysadmin"
+https://blog.flameeyes.eu/articles.atom autotools "sysadmin"
+http://blog.sanctum.geek.nz/feed/ linux tmux "sysadmin"
+http://www.archlinux.org/feeds/news/ linux archlinux "sysadmin"
+http://feeds2.feedburner.com/Command-line-fu cli "sysadmin"
+https://blogs.msdn.microsoft.com/commandline/feed/ "sysadmin"
+
+
+
