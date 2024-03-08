@@ -191,6 +191,7 @@ end
 
 ### ALIASES ###
 ### Andrea Aliases ###
+alias colors="/usr/bin/colors.sh"
 alias notizie="newsboat"
 alias c="clear"
 alias nv="nvim"

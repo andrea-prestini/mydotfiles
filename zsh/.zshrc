@@ -564,6 +564,13 @@ alias personal='cp -Rf /personal/* ~'
 #colorscript random
 
 
+  URL="$1"
+  SAVE_PATH=~/Downloads
+  GET_FILENAME="$(echo "$1" | rev | cut -d\/ -f1 | rev | sed -e 's@\%20@\_@g' )"
+
+  echo "$URL" "$SAVE_PATH/$GET_FILENAME" >> ~/.newsboat/queue
+}
+
 # zshrc or bashrc
 lf () {
 	LF_TEMPDIR="$(mktemp -d -t lf-tempdir-XXXXXX)"

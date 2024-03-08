@@ -284,9 +284,9 @@ map c
 map e
 map ee $nvim $fx
 map es $subl $fx
-map ev $vimv $fx
+map ev $vim $fx
 map evs $code $fx
-map eb $ min $fx
+map eb $ brave $fx
 map em $ mpv $fx
 map eo $ thunar .
 
