@@ -288,6 +288,7 @@ map ev $vim $fx
 map evs $code $fx
 map eb $ brave $fx
 map em $ mpv $fx
+map en $ nomacs .
 map eo $ thunar .
 
 # Archive Mappings
