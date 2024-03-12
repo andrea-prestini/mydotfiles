@@ -3,40 +3,44 @@
 bookmark-interactive yes
 # bookmark-autopilot yes
 bookmark-cmd ~/.newsboat/scripts/bookmarks.sh
-save-path "~/.newsboat/articles/new/"
+# browser lynx
 browser brave
+# external-url-viewer "urlview"
+external-url-viewer "urlscan -dc -r 'brave {}'"
 pager internal
 article-sort-order date-asc
 datetime-format "%d/%m/%Y"
 # show-read-articles no
-
-notify-always no
-notify-program "new_articles"
-notify-format "%n"
+save-path "~/.newsboat/media/"
+# notify-always no
+# notify-program "new_articles"
+# notify-format "%n"
 
 # Feed settings
 prepopulate-query-feeds yes
 refresh-on-startup no
 auto-reload no
+reload-threads 100
 reload-time 10
 
 # show-read-articles
-macro s set show-read-articles no
-macro S set show-read-articles yes
-
+macro p set show-read-articles no
+macro P set show-read-articles yes
 # launch video player
 macro w set browser "mpv --script-opts=ytdl_hook-ytdl_path=yt-dlp %u &> /dev/null &" ; open-in-browser ; set browser "w3m %u 2>/dev/null && rm ~/.w3m/cookie"
 macro v set browser "mpv %u &> /dev/null &" ; open-in-browser ; set browser "elink %u"
 
-download-path "$HOME/Scaricati/"
+
 # download video
-macro d set browser "yt-dlp"; open-in-browser ; set browser linkhandler
+macro d set browser "yt-dlp"; open-in-browser ; set browser brave
 
 # download audio only
-macro a set browser "yt-dlp --embed-medatada -xic -f bestaudio/best" ; open-in-browser ; set browser linkhandler
+macro a set browser "yt-dlp  -x" ; open-in-browser ; set browser brave
+macro e set browser "echo %u >> ~/.newsboat/queue"; open-in-browser; set browser brave
 
 # browser linkhandler
 macro , open-in-browser
+macro l set browser lynx; open-in-browser; set browser brave
 # macro v set browser "setsid -f mpv" ; open-in-browser ; set browser linkhandler
 # macro d set browser "dmenuhandler" ; open-in-browser ; set browser linkhandler
 # macro c set browser "echo %u | xclip -r -sel c" ; open-in-browser ; set browser linkhandler
@@ -45,7 +49,7 @@ macro , open-in-browser
 # macro P set browser "peertubetorrent %u 1080" ; open-in-browser ; set browser linkhandler
 
 # "star" or "favourite" an article - overwrites all existing flags!
-macro t edit-flags S
+macro s edit-flags S
 macro r edit-flags R
 macro u edit-flags ''
 
@@ -97,7 +101,7 @@ highlight feedlist "Breaking Italy" blue black
 highlight feedlist "Ansa News" blue black
  
 articlelist-format "%4i  %f %D  %t %T "
-highlight-article "age > 5" red black dim
+highlight-article "age > 5" red black bold
 highlight-article "flags=~\"R\"" green black dim
 highlight-article "flags=~\"S\"" blue black dim
 highlight article "^(Feed|Title|Author|Link|Date):.*" blue black
@@ -105,4 +109,10 @@ highlight article "\\[[0-9][0-9]*\\]" green black
 highlight article "\\[image [0-9][0-9]*\\]" yellow black dim
 
 # vim: ft=config:
+# podboat configure 
+download-path "~/.newsboat/podcast/"
+max-downloads 3
+player "mpd"
+podlist-format "%4i [%6dMB/%6tMB] [%5p %%] [%12K] %-20S %b"
+
 

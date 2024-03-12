@@ -1,6 +1,6 @@
 "query:Unread:unread = \"yes\"" meta
 "query:Read:unread = \"no\"" meta
-"query:> \Flag_S-> Salvato Articles:flags = \"S\"" STAR
+"query:> \Flag_S-> Starred Articles:flags = \"S\"" STAR
 "query:> \Flag_R-> Rivedere Articles:flags = \"R\"" RIVEDERE
 
 "query:Unread Articles (> 1 year old):unread = \"yes\" and age > 365"
@@ -12,9 +12,13 @@
 
 
 
+"-------------------   Cogitare ---------------------"
+https://www.dailycogito.com/feed/ "~Daily Cogito" "blog" "cogitare"
+https://stackoverflow.blog/feed/ "~StackOverflow Blog "" "Dev-Podcasts"
+https://changelog.com/podcast/feed "~ChangeLog Podcast "" "Dev-Podcasts"
+
 "-------------------   Giornali ---------------------"
 https://yewtu.be/feed/channel/UC4V3oCikXeSqYQr0hBMARwg "Youtube" "news" "italiano"
-http://www.repubblica.it/rss/homepage/rss2.0.xml "news" "italiano"
 https://www.ansa.it/sito/ansait_rss.xml "news" "italiano" "~Ansa NEWS"
 https://www.ansa.it/sito/notizie/cronaca/cronaca_rss.xml "news" "cronaca" "~Ansa Cronaca"
 https://www.ansa.it/sito/notizie/politica/politica_rss.xml "news" "politica" "~Ansa Politica"
@@ -25,13 +29,15 @@ https://news.google.com/rss/search?q=when:24h+allinurl:reuters.com&ceid=US:en&hl
 https://feeds.bbci.co.uk/news/world/europe/rss.xml "~BBC Europe" "world"
 https://rss.nytimes.com/services/xml/rss/nyt/World.xml "~New York Times" "world"
 http://feeds.washingtonpost.com/rss/world "~Washington Post" "world" 
+http://www.repubblica.it/rss/homepage/rss2.0.xml "news" "italiano"
 
 "-------------------  Linux news --------------------"
-https://www.archlinux.org/feeds/news/ "linux" "arch" "inglese"
-https://www.parabola.nu/feeds/news/ "linux" "arch" "parabola" "inglese"
-https://www.Debian.org/News/news "linux" "debian" "inglese"
+https://vkc.sh/blog/feed/ "~VKC.sh Blog "" "linux"
+https://www.archlinux.org/feeds/news/ "linux" "arch"
+https://www.parabola.nu/feeds/news/ "linux" "arch" "parabola"
+https://www.Debian.org/News/news "linux" "debian" 
 https://trisquel.info/en/node/feed "linux" "trisquel"
-https://yewtu.be/feed/channel/UCJdmdUp5BrsWsYVQUylCMLg "linux" "Youtube" "inglese"
+https://yewtu.be/feed/channel/UCJdmdUp5BrsWsYVQUylCMLg "linux" "Youtube" 
 https://stackoverflow.com/feeds/ "linux" "code" "~StackOverflow"
 https://newsboat.org/news.atom "linux" "newsboat"
 https://lwn.net/headlines/rss "~LWN.net" "nix"
@@ -43,11 +49,8 @@ https://9to5linux.com/feed/ "~9to5Linux" "nix"
 
 
 "-------------------   Distro news -----------------"
-https://www.kernel.org/feeds/kdist.xml "~kernel.org" "distro" 
 https://www.archlinux.org/feeds/packages/x86_64/ "~Arch Packages" "distro"
 https://linuxsecurity.com/advisories/archlinux?format=feed&type=rss "~Arch Advisory"
-https://packages.debian.org/sid/newpkg?format=rss "~Debian Packages" "distro"
-https://www.debian.org/security/dsa-long "~Debian Advisory" "distro"
 
 
 "-------------------  Tech news --------------------"
@@ -62,10 +65,10 @@ https://lifehacker.com/rss "~Lifehacker" "tech"
 
 
 "--------------------   YouTube ---------------------"
-https://yewtu.be/feed/channel/UCVls1GmFKf6WlTraIb_IaJg "Youtube" "linux" "inglese"
-https://yewtu.be/feed/channel/UC2eYFnH61tmytImy1mTYvhA "Youtube" "linux" "inglese"
-https://yewtu.be/feed/channel/UCld68syR8Wi-GY_n4CaoJGA "Youtube" "linux" "inglese"
-https://yewtu.be/feed/channel/UCngn7SVujlvskHRvRKc1cTw "Youtube" "linux" "inglese"
+https://yewtu.be/feed/channel/UCVls1GmFKf6WlTraIb_IaJg "Youtube" "linux" 
+https://yewtu.be/feed/channel/UC2eYFnH61tmytImy1mTYvhA "Youtube" "linux" 
+https://yewtu.be/feed/channel/UCld68syR8Wi-GY_n4CaoJGA "Youtube" "linux" 
+https://yewtu.be/feed/channel/UCngn7SVujlvskHRvRKc1cTw "Youtube" "linux" 
 https://yewtu.be/feeds/videos.xml?channel_id=UCXE2GTf2Z82pzbu1jfMs6HA "Youtube"
 https://yewtu.be/feeds/videos.xml?channel_id=UCMOiTfbUXxUFqJJtCQGHrrA "Youtube" "Boldrini" "economia"
 https://yewtu.be/feeds/videos.xml?channel_id=UCrdEJmK5bgFte04-UF7o29Q "Youtube" "politica" "economia"
@@ -75,6 +78,8 @@ https://yewtu.be/feeds/videos.xml?channel_id=UCBOtZaVafz_5OmUrqJAVStQ "Youtube"
 https://yewtu.be/feed/channel/UCSKSPISyIsexROCyKZLkD9w "Youtube" "cool" "scienza"
 
 "--------------------   YouTube Subscriptions -------"
+
+https://www.youtube.com/feeds/videos.xml?channel_id=UCMiyV_Ib77XLpzHPQH_q0qQ "~Veronica Explains" "YouTube Subscriptions"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw "YouTube Subscriptions"
 https://www.youtube.com/feeds/videos.xml?channel_id=UC9T1oMLlmfOkSkOAAnvoL6A "YouTube Subscriptions"
 https://www.youtube.com/feeds/videos.xml?channel_id=UCAhh41POT6froY75PsUl-MA "YouTube Subscriptions"
@@ -245,12 +250,11 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCyseO4nxaTQdlKWKfNA1DIA "Yo
 https://www.youtube.com/feeds/videos.xml?channel_id=UCLIQn-_Y91WoGOXOntp-C-A "YouTube Subscriptions"
 
 "--------------------   Reddit ----------------------"
-https://old.reddit.com/r/libreboot/.rss "reddit" "inglese" "reddit"
-https://old.reddit.com/r/unixporn/.rss "reddit" "inglese" "reddit"
+https://old.reddit.com/r/libreboot/.rss "reddit"  "reddit"
+https://old.reddit.com/r/unixporn/.rss "reddit"  "reddit"
 https://old.reddit.com/r/Italia/.rss "reddit" "italia" "reddit"
 https://old.reddit.com/r/italy/.rss "reddit" "italia" "reddit"
 https://www.reddit.com/r/linux/.rss "~r/linux" "reddit"
-https://www.reddit.com/r/debian/.rss "~r/debian" "reddit"
 https://www.reddit.com/r/linuxadmin/.rss "~r/linuxadmin" "reddit"
 https://www.reddit.com/r/commandline/.rss "~r/commandline" "reddit"
 
@@ -306,6 +310,8 @@ https://win-vector.com/feed/ "machinelearning"
 
 
 "--------------------   Math feed -------------------"
+https://www.mathisintheair.org/wp/feed/ "maths" "articoli matematica applicata"
+https://www.mathisintheair.org/wp/comments/feed/ "maths" "commenti matematica applicata"
 http://blog.wolfram.com/feed/ "maths"
 http://blog.kenperlin.com/?feed=rss2 "maths"
 http://boredzo.org/blog/feed/atom "maths"
